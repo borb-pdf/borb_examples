@@ -574,6 +574,8 @@ Pipeline([Source(), GetDocumentAsGraphML(where_to="output.graphml")]).process(d)
 
 Afterwards we can use a tool like yEd to visualize the resulting graphML file:
 
+![enter image description here](img/snippet_11_09.png)
+
 ## Merging two (or more) PDFs
 
 Need to combine multiple PDFs? Whether you’re assembling reports or collating research papers, merging PDFs is a common task.
