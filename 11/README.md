@@ -6,6 +6,32 @@ PDFs are everywhere—reports, contracts, research papers, invoices—you name i
 
 This guide will show you how to use borb to interact with existing PDFs. We'll start with simple tasks like extracting metadata and text, then move on to more advanced operations like filtering, keyword extraction, and debugging.
 
+Many of the examples in this chapter start by downloading an existing PDF file. For convenience and reproducibility, they include a small helper function (`download_pdf`) that fetches a PDF from a public GitHub repository containing real-world example documents “caught in the wild.” This utility code is not specific to borb—it simply ensures that each example has a concrete input PDF to work with, without requiring you to manually download or manage test files.
+
+```python3
+def download_pdf(url: str, filename: pathlib.Path) -> None:
+    """
+    Downloads a PDF file from the given URL and saves it to the specified filename.
+
+    :param url: The URL of the PDF file to download.
+    :param filename: The local file path where the downloaded PDF should be saved.
+
+    :raises requests.exceptions.RequestException: If there is an issue with the HTTP request (e.g., network failure, invalid URL, bad response).
+    :raises Exception: If any other unexpected error occurs during file writing.
+    """
+    try:
+        response = requests.get(url, stream=True)
+        response.raise_for_status()  # Raise an exception for bad status codes
+        with open(filename, "wb") as pdf_file:
+            for chunk in response.iter_content(chunk_size=8192):
+                pdf_file.write(chunk)
+    except requests.exceptions.RequestException as e:
+        print(f"Error downloading PDF: {e}")
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
+
+```
+
 ## Getting meta-information from a PDF
 
 Before diving into content extraction, it’s often useful to know more about a PDF itself. Who created it? When was it last modified? What software was used to generate it? This information can help determine authenticity, version history, or even compliance requirements.
