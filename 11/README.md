@@ -562,14 +562,13 @@ l.append_layout_element(
     )
 )
 l.append_layout_element(Paragraph(Lipsum.generate_lorem_ipsum(512)))
-PDF.write(what=d, where_to="assets/output.pdf")
+PDF.write(what=d, where_to="output.pdf")
 
 # step 2: read PDF
-d: Document = PDF.read("assets/output.pdf")
+d: Document = PDF.read("output.pdf")
 
 # step 3: process
-Pipeline([Source(), GetDocumentAsGraphML(where_to="assets/output.graphml")]).process(d)
-
+Pipeline([Source(), GetDocumentAsGraphML(where_to="output.graphml")]).process(d)
 
 ```
 
