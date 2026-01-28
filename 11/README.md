@@ -137,11 +137,13 @@ print(output[0])
 
 ```
 
-This outputs (truncated):
+This outputs:
 
 ```commandline
-In Conclusion
-The men and women working for the companies that build and operate North [...]
+SAFETY      Every Step of the Way
+Be Informed / Be Aware  / Be Responsive
+Important Information on Working Together to Keep 
+Neighbors, Communities and Pipelines Safe
 ```
 
 This is great for processing large numbers of documents automatically, saving you from manually copying and pasting content.
@@ -157,6 +159,8 @@ For example:
 - Filtering by font size lets you focus on large headers while ignoring body text.
 
 These techniques can be useful for processing documents with a structured format, like invoices or academic papers.
+
+<a href="https://colab.research.google.com/github/jorisschellekens/borb-examples/blob/master/11/ipynb/snippet_11_03.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
 ```python3
 from borb.pdf import ByFont
@@ -194,7 +198,7 @@ def download_pdf(url: str, filename: pathlib.Path) -> None:
 
 # Download
 download_pdf(
-    "https://raw.githubusercontent.com/jorisschellekens/borb-pdf-corpus/master/0001.pdf",
+    "https://github.com/borb-pdf/borb-pdf-corpus/raw/refs/heads/master/pdf/0001.pdf",
     pathlib.Path("input.pdf"),
 )
 
@@ -205,13 +209,14 @@ d: Document = PDF.read("input.pdf")
 output = Pipeline(
     [
         Source(),
-        ByFont('Helvetica'),
+        ByFont("Helvetica"),
         GetText(),
     ]
 ).process(d)
 
 # Print the text
-print(output.get(0, ''))
+print(output.get(0, ""))
+
 ```
 
 ### Filtering by font_color
