@@ -80,6 +80,8 @@ Getting the text out of a PDF is one of the most common tasks. Whether you're tr
 
 Here’s how `borb` makes it easy:
 
+<a href="https://colab.research.google.com/github/jorisschellekens/borb-examples/blob/master/11/ipynb/snippet_11_02.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+
 ```python3
 from borb.pdf import Document
 from borb.pdf import GetText
@@ -113,10 +115,9 @@ def download_pdf(url: str, filename: pathlib.Path) -> None:
         print(f"An unexpected error occurred: {e}")
 
 
-
 # Download
 download_pdf(
-    "https://raw.githubusercontent.com/jorisschellekens/borb-pdf-corpus/master/0001.pdf",
+    "https://github.com/borb-pdf/borb-pdf-corpus/raw/refs/heads/master/pdf/0001.pdf",
     pathlib.Path("input.pdf"),
 )
 
