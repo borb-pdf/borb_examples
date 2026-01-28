@@ -327,7 +327,55 @@ Maybe you’re looking for something very specific—like a phone number, an ema
 
 ```python3
 # snippet_11_06.ipynb
-# TODO
+from borb.pdf import ByFontColor
+from borb.pdf import Document
+from borb.pdf import Regex
+from borb.pdf import PDF
+from borb.pdf import Pipeline
+from borb.pdf import Source
+from borb.pdf import X11Color
+
+import pathlib
+import requests
+
+
+def download_pdf(url: str, filename: pathlib.Path) -> None:
+    """
+    Downloads a PDF file from the given URL and saves it to the specified filename.
+
+    :param url: The URL of the PDF file to download.
+    :param filename: The local file path where the downloaded PDF should be saved.
+
+    :raises requests.exceptions.RequestException: If there is an issue with the HTTP request (e.g., network failure, invalid URL, bad response).
+    :raises Exception: If any other unexpected error occurs during file writing.
+    """
+    try:
+        response = requests.get(url, stream=True)
+        response.raise_for_status()  # Raise an exception for bad status codes
+        with open(filename, "wb") as pdf_file:
+            for chunk in response.iter_content(chunk_size=8192):
+                pdf_file.write(chunk)
+    except requests.exceptions.RequestException as e:
+        print(f"Error downloading PDF: {e}")
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
+
+
+# Download
+download_pdf(
+    "https://github.com/borb-pdf/borb-pdf-corpus/raw/refs/heads/master/pdf/0001.pdf",
+    pathlib.Path("input.pdf"),
+)
+
+# Read PDF
+d: Document = PDF.read("input.pdf")
+
+# Process the PDF to get the text
+output = Pipeline([Source(), Regex("[iI]mportant")]).process(d)
+
+# Print the text
+print(output[0])
+
 ```
 
 ## Getting keywords from a PDF
