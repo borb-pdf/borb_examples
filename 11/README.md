@@ -15,6 +15,7 @@ Before diving into content extraction, it’s often useful to know more about a 
 <a href="https://colab.research.google.com/github/jorisschellekens/borb-examples/blob/master/11/ipynb/snippet_11_01.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
 ```python3
+# snippet_11_01.ipynb
 from borb.pdf import Document
 from borb.pdf import PDF
 
@@ -83,6 +84,7 @@ Here’s how `borb` makes it easy:
 <a href="https://colab.research.google.com/github/jorisschellekens/borb-examples/blob/master/11/ipynb/snippet_11_02.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
 ```python3
+# snippet_11_02.ipynb
 from borb.pdf import Document
 from borb.pdf import GetText
 from borb.pdf import PDF
@@ -163,6 +165,7 @@ These techniques can be useful for processing documents with a structured format
 <a href="https://colab.research.google.com/github/jorisschellekens/borb-examples/blob/master/11/ipynb/snippet_11_03.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
 ```python3
+# snippet_11_03.ipynb
 from borb.pdf import ByFont
 from borb.pdf import Document
 from borb.pdf import GetText
@@ -221,7 +224,10 @@ print(output.get(0, ""))
 
 ### Filtering by font_color
 
+<a href="https://colab.research.google.com/github/jorisschellekens/borb-examples/blob/master/11/ipynb/snippet_11_04.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+
 ```python3
+# snippet_11_04.ipynb
 from borb.pdf import ByFontColor
 from borb.pdf import Document
 from borb.pdf import GetText
@@ -280,15 +286,32 @@ print(output)
 
 ### Filtering by font_size
 
+<a href="https://colab.research.google.com/github/jorisschellekens/borb-examples/blob/master/11/ipynb/snippet_11_05.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+
+```python3
+# snippet_11_05.ipynb
+# TODO
+```
+
 ## Applying a regular expression to a PDF
 
 Maybe you’re looking for something very specific—like a phone number, an email address, or an invoice ID. Instead of extracting all text and manually searching through it, you can apply a regular expression to find exactly what you need.
+
+<a href="https://colab.research.google.com/github/jorisschellekens/borb-examples/blob/master/11/ipynb/snippet_11_06.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+
+```python3
+# snippet_11_06.ipynb
+# TODO
+```
 
 ## Getting keywords from a PDF
 
 If you need to quickly summarize what a document is about, keyword extraction can be incredibly helpful. Instead of reading through an entire PDF, you can extract key terms that provide a snapshot of its content.
 
+<a href="https://colab.research.google.com/github/jorisschellekens/borb-examples/blob/master/11/ipynb/snippet_11_07.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+
 ```python3
+# snippet_11_07.ipynb
 from borb.pdf import Document
 from borb.pdf import GetKeywordsByPagewiseTFIDF
 from borb.pdf import GetText
@@ -369,7 +392,10 @@ If you’re processing hundreds of PDFs, this technique allows you to automatica
 
 If your PDF contains images—like scanned documents, charts, or figures—you may want to extract them for further analysis or storage.
 
+<a href="https://colab.research.google.com/github/jorisschellekens/borb-examples/blob/master/11/ipynb/snippet_11_08.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+
 ```python3
+# snippet_11_08.ipynb
 from borb.pdf import Document
 from borb.pdf import GetImages
 from borb.pdf import PDF
@@ -427,7 +453,10 @@ print(output)
 
 Ever wondered what’s really inside a PDF? Think of a PDF as a structured document similar to JSON—it has primitive types (str, int, float, bool), collection types (dict, list), and references. borb lets you visualize this structure, making it easier to debug and understand PDFs at a low level.
 
+<a href="https://colab.research.google.com/github/jorisschellekens/borb-examples/blob/master/11/ipynb/snippet_11_09.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+
 ```python3
+# snippet_11_09.ipynb
 from borb.pdf import Document
 from borb.pdf import GetDocumentAsGraphML
 from borb.pdf import Image
@@ -477,12 +506,23 @@ Afterwards we can use a tool like yEd to visualize the resulting graphML file:
 
 Need to combine multiple PDFs? Whether you’re assembling reports or collating research papers, merging PDFs is a common task.
 
+<a href="https://colab.research.google.com/github/jorisschellekens/borb-examples/blob/master/11/ipynb/snippet_11_10.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+
 ```python3
+# snippet_11_10.ipynb
+# TODO
 ```
 
 ### Adding and Removing Pages to a PDF
 
 What if you want to add pages to an existing PDF? Or remove unnecessary pages? borb makes it easy to manipulate PDF structures programmatically.
+
+<a href="https://colab.research.google.com/github/jorisschellekens/borb-examples/blob/master/11/ipynb/snippet_11_11.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+
+```python3
+# snippet_11_11.ipynb
+# TODO
+```
 
 ```python3
 ```
