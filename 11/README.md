@@ -421,7 +421,7 @@ def download_pdf(url: str, filename: pathlib.Path) -> None:
 
 # Download
 download_pdf(
-    "https://raw.githubusercontent.com/jorisschellekens/borb-pdf-corpus/master/0080.pdf",
+    "https://github.com/borb-pdf/borb-pdf-corpus/raw/refs/heads/master/pdf/0080.pdf",
     pathlib.Path("input.pdf"),
 )
 
@@ -438,7 +438,6 @@ output = Pipeline(
 
 # Print the keywords
 print(output)
-
 
 ```
 
