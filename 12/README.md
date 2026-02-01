@@ -203,6 +203,14 @@ from borb.pdf import Document
 from borb.pdf import Page
 from borb.pdf import SingleColumnLayout
 from borb.pdf import Paragraph
+from borb.pdf import LayoutElement
+from borb.pdf import Lipsum
+from borb_redact.pdf.layout_element.annotation.redaction_annotation import RedactionAnnotation
+from borb.pdf import Pipeline
+from borb.pdf import Source
+from borb_redact.pdf.toolkit.sink.apply_redaction_annotations import ApplyRedactionAnnotations
+from borb.pdf import PDF
+import random
 
 # create empty Document
 doc = Document()
