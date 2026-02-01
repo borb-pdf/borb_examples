@@ -256,7 +256,51 @@ The add-on translates these matches into redact annotations automatically, after
 
 ```python3
 # snippet_12_06.ipynb
-# TODO
+from borb.pdf import Document
+from borb.pdf import Page
+from borb.pdf import SingleColumnLayout
+from borb.pdf import Paragraph
+from borb.pdf import LayoutElement
+from borb.pdf import Lipsum
+from borb_redact.pdf.toolkit.pipe.redact_regex import RedactRegex
+from borb.pdf import Pipeline
+from borb.pdf import Source
+
+from borb_redact.pdf.toolkit.sink.apply_redaction_annotations import ApplyRedactionAnnotations
+from borb.pdf import PDF
+import random
+
+# create empty Document
+doc = Document()
+
+# create empty Page
+page = Page()
+doc.append_page(page)
+
+# create PageLayout
+layout = SingleColumnLayout(page)
+
+# add random text
+random.seed(0)
+for _ in range(5):
+  layout.append_layout_element(
+    Paragraph(
+      text=Lipsum.generate_lorem_ipsum(512),
+      text_alignment=LayoutElement.TextAlignment.JUSTIFIED,
+    )
+  )
+
+# process
+Pipeline(
+  [
+    Source(),
+    RedactRegex('[Qq]uam'),
+    ApplyRedactionAnnotations(remove_applied_redact_annotations=True),
+  ]
+).process(doc)
+
+PDF.write(what=doc, where_to="output.pdf")
+
 ```
 
 The final example builds on the same idea, but replaces custom regular expressions with the built-in pattern classes provided by `borb_redact`. These classes encapsulate commonly redacted data types—such as IP addresses, IBANs, personal names, and similar structured identifiers—so you can apply well-tested patterns without writing or maintaining your own expressions.
