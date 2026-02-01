@@ -148,6 +148,11 @@ from borb.pdf import Document
 from borb.pdf import Page
 from borb.pdf import SingleColumnLayout
 from borb.pdf import Paragraph
+from borb.pdf import PDF
+from borb.pdf import Pipeline
+from borb.pdf import Source
+from borb.pdf import GetText
+from borb_ocr.pdf.toolkit.pipe.apply_ocr import ApplyOCR
 
 # create a (PIL) image that has the text 'Hello World' in it
 from PIL import Image, ImageDraw, ImageFont  # type: ignore[import-not-found]
