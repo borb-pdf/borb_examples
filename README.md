@@ -193,11 +193,58 @@ SmartArt in `borb` is built on familiar layout primitives—specifically `Table`
 
 ### 1.5.8 Exploring Advanced Layouts
 
+This section explores more advanced layout techniques using borb’s layout elements, focusing on how content can be structured and positioned at the page level. The examples demonstrate different approaches to organizing content while maintaining full control over layout behavior.
+
+Key topics include:
+
+- **Single Column Layout**: Learn how to create a clean, single-column page layout suitable for documents such as reports, letters, or long-form text. These examples show how to structure content vertically within a single flow.
+- **Multi-Column Page Layout**: Explore how to divide a page into multiple columns, a common requirement for magazines, articles, and technical documentation. You’ll see how content is distributed across columns within a single page.
+- **Manually Placing LayoutElements**: Understand how to place `LayoutElement` instances manually on a page when more explicit control over positioning is required. This approach is useful for precise layouts where automatic flow is not sufficient.
+
+By the end of this section, you’ll be familiar with different layout strategies and know when to rely on automatic layout behavior versus manual placement.
+
 ### 1.5.9 Using Templates for Streamlined Design
+
+This section demonstrates how predefined templates can be used to generate consistent document layouts efficiently. Rather than building each document from scratch, these examples show how common document formats can be expressed as reusable templates.
+
+Key topics include:
+
+- **Slideshow Template**: Learn how to use a template specifically designed for generating slideshow-style PDF documents, with each page representing a slide.
+- **A4 Portrait Template**: Explore a general-purpose template for A4 portrait documents, providing a standardized page size and orientation for typical documents.
+- **A4PortraitInvoice Template**: See how a specialized invoice template can be used to generate professional invoices with a predefined structure tailored to common invoicing needs.
+
+By the end of this section, you’ll understand how templates can simplify document generation while ensuring consistent structure and formatting.
 
 ### 1.5.10 Showcases
 
+This section contains complete, end-to-end examples that demonstrate how borb can be used to create realistic documents from scratch. Each example focuses on a concrete use case and combines multiple features introduced earlier.
+
+Key examples include:
+
+- **Creating an Invoice from Scratch**: A full example showing how to construct an invoice document programmatically, including layout, content, and styling.
+- **Creating a Patient Intake Document**: Learn how to build a patient intake form using PDF form fields, enabling interactive documents that can be filled in digitally.
+- **Creating a Train Ticket**: An example that demonstrates how to generate a ticket-style document, combining structured layout and precise placement.
+
+By the end of this section, you’ll have reference implementations for common real-world document types built entirely with borb.
+
 ### 1.5.11 Processing Existing PDF Documents
+
+This section focuses on working with PDF documents that already exist, rather than generating new ones. The examples demonstrate how to inspect, extract, and analyze content from PDFs using borb.
+
+Key topics include:
+
+- **Working with Existing PDF Documents**: Learn how to open and interact with existing PDF files programmatically.
+- **Getting Meta Information**: Extract document metadata such as title, author, and other descriptive information.
+- **Extracting Text with Filters**: Retrieve text content from a PDF while applying filters based on:
+   - Font
+   - Font color
+   - Font size
+- **Applying Regular Expressions**: Use regular expressions to search and filter extracted text.
+- **Getting Keywords (TF-IDF)**: Learn how to extract keywords from a document using TF-IDF–based analysis.
+- **Extracting Images from a PDF**: Retrieve embedded images for inspection or reuse.
+- **Converting to GraphML**: Convert PDF content into a GraphML representation for further analysis or visualization.
+
+By the end of this section, you’ll be able to treat PDFs as structured data sources rather than static files.
 
 <div style="page-break-before: always;"></div>
 
