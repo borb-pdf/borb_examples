@@ -40,7 +40,7 @@ Because the output is generated through `borb` itself, Markdown documents can be
 
 The following example demonstrates the most basic usage of `borb_markdown_to_pdf`. It shows how a simple Markdown document can be converted into a PDF with minimal setup, focusing on the core idea: Markdown in, well-structured PDF out. This example is intentionally small, making it easy to understand how the add-on fits into an existing `borb` workflow.
 
-<a href="https://colab.research.google.com/github/jorisschellekens/borb-examples/blob/master/11/ipynb/snippet_12_02.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+<a href="https://colab.research.google.com/github/borb-pdf/borb_examples/blob/master/12/ipynb/snippet_12_02.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
 ```python3
 # snippet_12_02.ipynb
@@ -74,7 +74,7 @@ PDF.write(
 
 That said, `borb_markdown_to_pdf` is not limited to trivial inputs. It also supports more complex Markdown constructs—such as nested lists, code blocks, tables, and richer inline formatting—while preserving structure and layout. The next example builds on the same principles, but demonstrates how the add-on handles more involved Markdown documents without sacrificing clarity or control.
 
-<a href="https://colab.research.google.com/github/jorisschellekens/borb-examples/blob/master/11/ipynb/snippet_12_03.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+<a href="https://colab.research.google.com/github/borb-pdf/borb_examples/blob/master/12/ipynb/snippet_12_03.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
 ```python3
 # snippet_12_03.ipynb
@@ -140,7 +140,7 @@ This example demonstrates the most basic end-to-end usage of `borb_ocr`. It star
 
 The document is then passed through a simple Pipeline that applies OCR and extracts the recognized text. By printing the result, the example makes it easy to verify that the text embedded in the image is successfully detected and recovered, illustrating the core purpose of the add-on with minimal moving parts.
 
-<a href="https://colab.research.google.com/github/jorisschellekens/borb-examples/blob/master/11/ipynb/snippet_12_04.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+<a href="https://colab.research.google.com/github/borb-pdf/borb_examples/blob/master/12/ipynb/snippet_12_04.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
 ```python3
 # snippet_12_04.ipynb
@@ -190,7 +190,7 @@ The following example illustrates the most direct way to use `borb_redact`. It s
 
 Once the redact annotation is in place, a `Pipeline` is used to apply the redactions and produce the final document. This step is critical: redact annotations describe what should be removed, while the pipeline is responsible for permanently removing the underlying content. More advanced workflows—such as locating content automatically—build on this same foundation.
 
-<a href="https://colab.research.google.com/github/jorisschellekens/borb-examples/blob/master/11/ipynb/snippet_12_05.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+<a href="https://colab.research.google.com/github/borb-pdf/borb_examples/blob/master/12/ipynb/snippet_12_05.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
 ```python3
 # snippet_12_05.ipynb
@@ -239,7 +239,7 @@ In the next example, redaction is driven by content rather than coordinates. Ins
 
 The add-on translates these matches into redact annotations automatically, after which the same pipeline-based process is applied to permanently remove the content. This demonstrates how borb_redact can scale from precise, manual control to rule-based redaction while remaining explicit and auditable.
 
-<a href="https://colab.research.google.com/github/jorisschellekens/borb-examples/blob/master/11/ipynb/snippet_12_06.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+<a href="https://colab.research.google.com/github/borb-pdf/borb_examples/blob/master/12/ipynb/snippet_12_06.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
 ```python3
 # snippet_12_06.ipynb
@@ -250,7 +250,7 @@ The final example builds on the same idea, but replaces custom regular expressio
 
 Using these predefined matchers makes redaction rules more readable, more consistent, and less error-prone, especially in larger pipelines. The underlying workflow remains unchanged: matches are converted into redact annotations and then applied through a pipeline to permanently remove the sensitive content.
 
-<a href="https://colab.research.google.com/github/jorisschellekens/borb-examples/blob/master/11/ipynb/snippet_12_07.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+<a href="https://colab.research.google.com/github/borb-pdf/borb_examples/blob/master/12/ipynb/snippet_12_07.ipynb" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
 
 ```python3
 # snippet_12_07.ipynb
